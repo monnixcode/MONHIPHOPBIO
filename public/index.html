@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon HipHop — All of an artist’s links in one place</title>
+  <meta name="description" content="Mon HipHop Bio — Create a personal link page for artists. Bring your music, YouTube, Instagram and every other channel into one link.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mon HipHop — All of an artist’s links">
+  <meta property="og:description" content="Every link an artist needs, on one page.">
+  <meta property="og:image" content="/img/logo-mark.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b0b0d">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Mon HipHop home"><img src="/img/logo-gold.png" alt="Mon HipHop"></a>
+      <nav class="nav-actions" aria-label="Main menu">
+        <a class="btn btn-ghost btn-sm" href="/login.html">Sign in</a>
+        <a class="btn btn-gold btn-sm" href="/login.html?mode=up">Sign up free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <img class="hero-logo" src="/img/logo-gold.png" alt="Mon HipHop logo">
+      <h1>One link for all your work</h1>
+      <p class="lead">Build a personal bio link page. Add your music, videos, social profiles and website, share it in one click, and track clicks on every link.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="/login.html?mode=up">Create your link page</a>
+        <a class="btn" href="#demo">See an example</a>
+      </div>
+
+      <div class="features" role="list">
+        <article class="feature" role="listitem">
+          <div class="ico" aria-hidden="true">01</div>
+          <h3>Your own handle</h3>
+          <p>Get a clean link such as <code>/u/yourname</code> that is easy to remember and works everywhere.</p>
+        </article>
+        <article class="feature" role="listitem">
+          <div class="ico" aria-hidden="true">02</div>
+          <h3>Flexible links</h3>
+          <p>Add, delete, reorder or hide links instantly. Up to 30 links.</p>
+        </article>
+        <article class="feature" role="listitem">
+          <div class="ico" aria-hidden="true">03</div>
+          <h3>Click analytics</h3>
+          <p>See which links get the most attention, so you can tune your content for your fans.</p>
+        </article>
+      </div>
+
+      <div class="demo" id="demo" aria-label="Profile example">
+        <div class="demo-phone">
+          <div class="avatar-lg" aria-hidden="true">M</div>
+          <div class="profile-name">Mon HipHop</div>
+          <div class="profile-user">@monhiphop</div>
+          <p class="profile-bio" style="margin-top:10px">Thai rap artist · Listen to the newest tracks via the links below</p>
+          <div class="links" style="margin-top:14px">
+            <div class="link-btn"><span class="badge" style="background:#1db954">SP</span><span class="t">Listen on Spotify</span><span class="arrow">›</span></div>
+            <div class="link-btn"><span class="badge" style="background:#ff3d3d">YT</span><span class="t">New music video</span><span class="arrow">›</span></div>
+            <div class="link-btn"><span class="badge" style="background:#e1306c">IG</span><span class="t">Follow on Instagram</span><span class="arrow">›</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>© <span id="yr">2026</span> Mon HipHop</span>
+      <nav aria-label="Footer">
+        <a href="/login.html">Sign in</a>
+        <a href="/login.html?mode=up">Sign up</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/assets/js/config.js"></script>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# dependencies & logs
+node_modules/
+npm-debug.log*
+.wrangler/
+.dev.vars
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# secrets — never commit these
+.env
+.env.*
+*.key

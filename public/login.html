@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in / Sign up | Mon HipHop</title>
+  <meta name="description" content="Sign in or sign up for Mon HipHop Bio to build your artist link page">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0b0d">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Back to home"><img src="/img/logo-gold.png" alt="Mon HipHop"></a>
+      <a class="btn btn-ghost btn-sm" href="/">← Home</a>
+    </div>
+  </header>
+
+  <main class="auth-page wrap">
+    <section class="auth-card" aria-labelledby="auth-title">
+      <div class="auth-head">
+        <img src="/img/logo-gold.png" alt="">
+        <h1 id="auth-title" style="font-size:1.35rem;margin:0 0 4px">Welcome back</h1>
+        <p id="auth-sub">Sign in to manage your link page</p>
+      </div>
+
+      <div class="seg" role="tablist" aria-label="Choose sign in or sign up" id="tabs">
+        <button type="button" role="tab" data-tab="in" aria-selected="true">Sign in</button>
+        <button type="button" role="tab" data-tab="up" aria-selected="false">Sign up</button>
+      </div>
+
+      <!-- SIGN IN -->
+      <form id="f-in" class="view" novalidate>
+        <div class="field">
+          <label for="in-email">Email</label>
+          <input class="input" id="in-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="in-pass">Password</label>
+          <div class="input-group">
+            <input class="input" id="in-pass" name="password" type="password" autocomplete="current-password" required placeholder="••••••••">
+            <button type="button" class="toggle" data-toggle="in-pass" aria-label="Show or hide password">👁</button>
+          </div>
+        </div>
+        <button class="btn btn-gold btn-block" type="submit">Sign in</button>
+        <div class="auth-foot">
+          <button type="button" class="link-like" data-go="forgot">Forgot password?</button>
+          <button type="button" class="link-like" data-tab-go="up">No account yet? Sign up</button>
+        </div>
+      </form>
+
+      <!-- SIGN UP -->
+      <form id="f-up" class="view hidden" novalidate>
+        <div class="field">
+          <label for="up-user">Username (used in your link)</label>
+          <div class="input-group">
+            <input class="input" id="up-user" name="username" type="text" autocomplete="username" required minlength="3" maxlength="30" placeholder="monhiphop" spellcheck="false" aria-describedby="up-user-hint">
+          </div>
+          <div class="check-status wait" id="up-user-hint" aria-live="polite">a–z, 0–9 and _, 3–30 characters</div>
+          <div class="hint">Your page will be at <code>/u/username</code></div>
+        </div>
+        <div class="field">
+          <label for="up-name">Display name (artist name)</label>
+          <input class="input" id="up-name" name="display_name" type="text" maxlength="60" placeholder="Mon HipHop">
+        </div>
+        <div class="field">
+          <label for="up-email">Email</label>
+          <input class="input" id="up-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="up-pass">Password</label>
+          <div class="input-group">
+            <input class="input" id="up-pass" name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters">
+            <button type="button" class="toggle" data-toggle="up-pass" aria-label="Show or hide password">👁</button>
+          </div>
+          <div class="meter" id="meter" data-level="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="hint" id="meter-text">Use uppercase letters, numbers and symbols</div>
+        </div>
+        <button class="btn btn-gold btn-block" type="submit">Create account</button>
+        <p class="hint center" style="margin:14px 0 0">By signing up you agree to the terms of use</p>
+      </form>
+
+      <!-- FORGOT -->
+      <form id="f-forgot" class="view hidden" novalidate>
+        <div class="field">
+          <label for="fg-email">Email you signed up with</label>
+          <input class="input" id="fg-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </div>
+        <button class="btn btn-gold btn-block" type="submit">Send password reset link</button>
+        <div class="auth-foot"><button type="button" class="link-like" data-go="in">← Back to sign in</button></div>
+      </form>
+
+      <!-- RESET (opened from the email link) -->
+      <form id="f-reset" class="view hidden" novalidate>
+        <div class="field">
+          <label for="rs-pass">New password</label>
+          <div class="input-group">
+            <input class="input" id="rs-pass" name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters">
+            <button type="button" class="toggle" data-toggle="rs-pass" aria-label="Show or hide password">👁</button>
+          </div>
+          <div class="meter" data-level="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </div>
+        <button class="btn btn-gold btn-block" type="submit">Save new password</button>
+      </form>
+
+      <div id="msg" class="msg hidden" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/login.js"></script>
+</body>
+</html>

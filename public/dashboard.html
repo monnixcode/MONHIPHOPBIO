@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Mon HipHop</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0b0d">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/dashboard.html" aria-label="Dashboard"><img src="/img/logo-gold.png" alt="Mon HipHop"></a>
+      <nav class="nav-actions" aria-label="Account menu">
+        <a class="btn btn-ghost btn-sm" id="view-link" href="/" target="_blank" rel="noopener">View my page</a>
+        <button class="btn btn-sm" id="logout" type="button">Sign out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dash wrap wrap-wide" id="app">
+    <div class="loading" id="loading">Loading…</div>
+
+    <div id="dash" class="hidden">
+      <div class="card card-wide" style="margin-bottom:16px">
+        <div class="card-head">
+          <div>
+            <h1 style="font-size:1.35rem;margin:0" id="hello">Hello</h1>
+            <div class="muted" style="font-size:.95rem">Your profile: <a id="public-url" href="#" target="_blank" rel="noopener"></a></div>
+          </div>
+          <div class="inline-actions">
+            <button class="btn btn-sm" id="copy-url" type="button">Copy link</button>
+            <button class="btn btn-gold btn-sm" id="native-share" type="button">Share</button>
+          </div>
+        </div>
+        <div class="stats" aria-label="Statistics">
+          <div class="stat"><b id="st-clicks">0</b><span>Total clicks</span></div>
+          <div class="stat"><b id="st-active">0</b><span>Visible links</span></div>
+          <div class="stat"><b id="st-total">0</b><span>Total links</span></div>
+        </div>
+        <div id="dash-msg" class="msg hidden" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="dash-grid">
+        <!-- PROFILE -->
+        <section class="card" aria-labelledby="h-profile">
+          <div class="card-head"><h2 id="h-profile">Profile</h2></div>
+          <form id="f-profile" novalidate>
+            <div class="avatar-edit">
+              <div class="avatar-lg" id="av-preview" aria-hidden="true">M</div>
+              <div>
+                <label class="btn btn-sm file-btn">Change photo
+                  <input type="file" id="av-file" accept="image/jpeg,image/png,image/webp" aria-label="Choose profile photo">
+                </label>
+                <div class="hint" style="margin-top:6px">JPG, PNG or WebP, up to 2 MB</div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="p-name">Display name</label>
+              <input class="input" id="p-name" maxlength="60" placeholder="Artist name">
+            </div>
+            <div class="field">
+              <label for="p-user">Username (link)</label>
+              <input class="input" id="p-user" maxlength="30" autocomplete="off" spellcheck="false">
+              <div class="check-status wait" id="p-user-hint">a–z, 0–9 and _, 3–30 characters</div>
+            </div>
+            <div class="field">
+              <label for="p-bio">Short bio</label>
+              <textarea class="textarea" id="p-bio" maxlength="280" placeholder="Introduce yourself to your fans"></textarea>
+              <div class="counter"><span id="bio-count">0</span>/280</div>
+            </div>
+            <button class="btn btn-gold btn-block" type="submit">Save profile</button>
+          </form>
+        </section>
+
+        <!-- LINKS -->
+        <section class="card" aria-labelledby="h-links">
+          <div class="card-head">
+            <h2 id="h-links">My links</h2>
+            <span class="muted" style="font-size:.85rem" id="link-count">0/30</span>
+          </div>
+          <ul class="link-list" id="link-list" aria-live="polite"></ul>
+          <div class="empty hidden" id="link-empty">No links yet. Add your first link below.</div>
+
+          <form class="link-add" id="f-link" novalidate>
+            <div class="row-2">
+              <div class="field">
+                <label for="l-title">Button label</label>
+                <input class="input" id="l-title" maxlength="80" placeholder="e.g. Listen to the new single on Spotify">
+              </div>
+              <div class="field">
+                <label for="l-url">Link (URL)</label>
+                <input class="input" id="l-url" inputmode="url" placeholder="https://open.spotify.com/…" autocomplete="off" spellcheck="false">
+              </div>
+            </div>
+            <button class="btn btn-block" type="submit">+ Add link</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>© <span id="yr">2026</span> Mon HipHop</span>
+      <nav aria-label="Footer"><a href="/">Home</a></nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/dashboard.js"></script>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

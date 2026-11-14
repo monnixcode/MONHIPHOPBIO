@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon HipHop — Artist profile</title>
+  <meta name="description" content="All of this artist’s links in one place — Mon HipHop Bio">
+  <meta name="theme-color" content="#0b0b0d">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <main class="wrap" id="page" style="max-width:560px">
+    <div class="loading" id="loading">Loading profile…</div>
+
+    <section class="profile hidden" id="profile" aria-live="polite">
+      <div class="avatar-lg" id="avatar" aria-hidden="true"></div>
+      <h1 class="profile-name" id="name"></h1>
+      <div class="profile-user" id="user"></div>
+      <p class="profile-bio" id="bio"></p>
+
+      <nav class="links" id="links" aria-label="Artist links"></nav>
+      <div class="empty hidden" id="links-empty" style="margin-top:22px">No links on this page yet</div>
+
+      <section class="share-box" aria-labelledby="share-h">
+        <span class="label" id="share-h">Share this profile</span>
+        <div class="share-icons" id="share-icons"></div>
+        <div class="urlbox">
+          <input class="input" id="share-url" readonly aria-label="Profile link">
+          <button class="btn" id="copy" type="button">Copy</button>
+        </div>
+        <div class="hint center" id="share-msg" style="margin-top:8px;min-height:1.2em" role="status"></div>
+      </section>
+
+      <a class="mini-logo" href="/" aria-label="Mon HipHop">
+        <img src="/img/logo-gold.png" alt="Mon HipHop" style="width:110px;margin:0 auto">
+      </a>
+      <p class="powered">Create your own link page at Mon HipHop Bio</p>
+    </section>
+
+    <section class="empty-state hidden" id="notfound" style="text-align:center;padding:72px 0">
+      <h1 style="font-size:1.5rem">Page not found</h1>
+      <p class="muted">This username may not exist or is not active yet.</p>
+      <a class="btn btn-gold" href="/">Back to home</a>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/profile.js"></script>
+</body>
+</html>
